@@ -22,7 +22,11 @@ button,
 
 /* Scale SVG logos to appropriate size */
 .logo svg {
-  @apply h-[5rem] w-[5rem];
+  @apply h-[5rem] w-auto max-w-[12rem] py-3;
+}
+
+.logo {
+  @apply inline-block;
 }
 
 /* Search */
@@ -393,6 +397,7 @@ pre {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @apply rounded-xl;
 }
 
 .thumbnail_card {
@@ -400,6 +405,7 @@ pre {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @apply rounded-xl;
 }
 
 .thumbnail_card_related {
@@ -407,6 +413,7 @@ pre {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @apply rounded-xl;
 }
 
 .thumbnail_card_term {
@@ -414,6 +421,7 @@ pre {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @apply rounded-xl;
 }
 
 .single_hero_basic {
@@ -474,7 +482,7 @@ pre {
 }
 
 .padding-main-menu {
-  padding: 2px 0 3px 0;
+  padding: 3px 0 3px 0;
 }
 .padding-top-\[5px\] {
   padding-top: 5px;
@@ -553,6 +561,33 @@ pre {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
+}
+
+.main-menu a {
+  padding: 0.25rem 1rem;
+}
+
+.main-menu a:has(p.active) {
+  background-color: rgba(var(--color-primary-700), 1);
+  color: rgba(var(--color-primary-100), 1);
+  border-radius: 0.5rem;
+  text-decoration-line: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.main-menu a:has(p.active):hover {
+  background-color: rgba(var(--color-primary-100), 1);
+  color: rgba(var(--color-primary-700), 1);
+  border-radius: 0.5rem;
+  text-decoration-line: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.main-menu p.active {
+  text-decoration-line: none;
+  margin: 0;
 }
 
 /* Gallery Specific Styles */
@@ -1145,4 +1180,24 @@ pre {
   .2xl\:ratio-32-9 {
     padding-top: 28.125%;
   } /* 32:9 Aspect Ratio */
+}
+
+/* Card hover effects */
+.min-h-full.border.border-neutral-200.dark\:border-neutral-700.border-2.rounded-xl.overflow-hidden.shadow-2xl.relative {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.min-h-full.border.border-neutral-200.dark\:border-neutral-700.border-2.rounded-xl.overflow-hidden.shadow-2xl.relative:hover {
+  @apply transform scale-[1.03];
+  box-shadow: 0 0 20px rgba(159, 74, 255, 0.4), 0 0 40px rgba(159, 74, 255, 0.2);
+}
+
+/* Alternative selector for better compatibility */
+div[class*="border-neutral-200"][class*="rounded-xl"][class*="shadow-2xl"] {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+div[class*="border-neutral-200"][class*="rounded-xl"][class*="shadow-2xl"]:hover {
+  @apply transform scale-[1.03];
+  box-shadow: 0 0 20px rgba(159, 74, 255, 0.4), 0 0 40px rgba(159, 74, 255, 0.2);
 }

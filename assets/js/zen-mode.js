@@ -16,13 +16,13 @@ function _toogleZenMode(zendModeButton) {
 
   // Change width of article content
   articleContent.classList.toggle("max-w-fit");
-  articleContent.classList.toggle("max-w-prose");
+  articleContent.classList.toggle("max-w-3xl");
 
   // Change width of article title and footer
   header.classList.toggle("max-w-full");
-  header.classList.toggle("max-w-prose");
+  header.classList.toggle("max-w-3xl");
   footer.classList.toggle("max-w-full");
-  footer.classList.toggle("max-w-prose");
+  footer.classList.toggle("max-w-3xl");
 
   // Read i18n title from data-attributes
   const titleI18nDisable = zendModeButton.getAttribute("data-title-i18n-disable");

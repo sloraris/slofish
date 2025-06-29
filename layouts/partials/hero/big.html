@@ -32,7 +32,7 @@
   {{ if strings.HasSuffix $featured ".svg" }}
     {{ with . }}
       <figure>
-        <img class="w-full rounded-lg single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
+        <img class="w-full rounded-2xl single_hero_round nozoom" alt="{{ $alt }}" src="{{ .RelPermalink }}">
         {{ if $caption }}
           <figcaption class="text-sm text-neutral-700 dark:text-neutral-400 hover:underline text-center">
             {{ $caption | markdownify }}
@@ -44,7 +44,7 @@
     {{ with . }}
       <figure>
         <img
-          class="w-full rounded-lg single_hero_round nozoom"
+          class="w-full rounded-2xl single_hero_round nozoom"
           alt="{{ $alt }}"
           width="{{ .Width }}"
           height="{{ .Height }}"
@@ -60,7 +60,7 @@
     {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
       <figure>
         <img
-          class="w-full rounded-lg single_hero_round nozoom"
+          class="w-full rounded-2xl single_hero_round nozoom"
           alt="{{ $alt }}"
           width="{{ .Width }}"
           height="{{ .Height }}"

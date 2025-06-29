@@ -24,13 +24,13 @@
   {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") }}
     {{ with . }}
       <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom rounded-2xl"
         style="background-image:url({{ .RelPermalink }});"></div>
     {{ end }}
   {{ else }}
     {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
       <div
-        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
+        class="w-full h-36 md:h-56 lg:h-72 single_hero_basic nozoom rounded-2xl"
         style="background-image:url({{ .RelPermalink }});"></div>
     {{ end }}
   {{ end }}
