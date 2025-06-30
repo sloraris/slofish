@@ -590,6 +590,21 @@ pre {
   margin: 0;
 }
 
+.prose a:not(.toc a) {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: inherit;
+  text-underline-offset: 2px;
+}
+
+.prose a:not(.toc a):hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(var(--color-primary-500), 1);
+  color: rgba(var(--color-primary-500), 1);
+}
+
 /* Gallery Specific Styles */
 .grid-w10 {
   width: calc(10% - 5px);
