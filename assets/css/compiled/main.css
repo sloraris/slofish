@@ -1575,10 +1575,10 @@ body.zen-mode-enable {
       background-color: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 50%, transparent);
     }
   }
-  .bg-neutral\/50 {
-    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral), 1), 1) 50%, transparent);
+  .bg-neutral-800\/50 {
+    background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, rgba(var(--color-neutral), 1) 50%, transparent);
+      background-color: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 50%, transparent);
     }
   }
   .bg-primary-100 {
@@ -1887,6 +1887,9 @@ body.zen-mode-enable {
   }
   .\!text-neutral {
     color: rgba(var(--color-neutral), 1) !important;
+  }
+  .text-neutral {
+    color: rgba(var(--color-neutral), 1);
   }
   .text-neutral-50 {
     color: rgba(var(--color-neutral-50), 1);
@@ -3088,6 +3091,14 @@ body.zen-mode-enable {
       background-color: rgba(var(--color-neutral-400), 1);
     }
   }
+  .dark\:bg-neutral-500\/50 {
+    &:is(.dark *) {
+      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-500), 1), 1) 50%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, rgba(var(--color-neutral-500), 1) 50%, transparent);
+      }
+    }
+  }
   .dark\:bg-neutral-600 {
     &:is(.dark *) {
       background-color: rgba(var(--color-neutral-600), 1);
@@ -3101,14 +3112,6 @@ body.zen-mode-enable {
   .dark\:bg-neutral-800 {
     &:is(.dark *) {
       background-color: rgba(var(--color-neutral-800), 1);
-    }
-  }
-  .dark\:bg-neutral-800\/50 {
-    &:is(.dark *) {
-      background-color: color-mix(in srgb, rgba(rgba(var(--color-neutral-800), 1), 1) 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, rgba(var(--color-neutral-800), 1) 50%, transparent);
-      }
     }
   }
   .dark\:bg-neutral-900\/50 {
@@ -3493,6 +3496,9 @@ a {
 .prose-invert .highlight pre > code {
   background-color: unset;
 }
+.prose hr {
+  border-color: rgba(var(--color-neutral-400), 1) !important;
+}
 .chroma .lntd, .chroma .lntd pre {
   margin: calc(var(--spacing) * 0);
   --tw-border-style: none;
@@ -3823,6 +3829,76 @@ pre {
   text-underline-offset: 2px;
   text-decoration-color: rgba(var(--color-primary-500), 1);
   color: rgba(var(--color-primary-500), 1);
+}
+.pt-8 .flex.justify-between a {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-lg);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: rgba(var(--color-neutral-300), 1);
+  background-color: rgba(var(--color-neutral-100), 1);
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 2);
+  color: rgba(var(--color-neutral-700), 1);
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 200ms;
+  transition-duration: 200ms;
+  --tw-ease: var(--ease-in-out);
+  transition-timing-function: var(--ease-in-out);
+  &:hover {
+    @media (hover: hover) {
+      border-color: rgba(var(--color-primary-300), 1);
+    }
+  }
+  &:hover {
+    @media (hover: hover) {
+      background-color: rgba(var(--color-primary-100), 1);
+    }
+  }
+  &:hover {
+    @media (hover: hover) {
+      color: rgba(var(--color-primary-700), 1);
+    }
+  }
+  &:is(.dark *) {
+    border-color: rgba(var(--color-neutral-600), 1);
+  }
+  &:is(.dark *) {
+    background-color: rgba(var(--color-neutral-800), 1);
+  }
+  &:is(.dark *) {
+    color: rgba(var(--color-neutral-300), 1);
+  }
+  &:is(.dark *) {
+    &:hover {
+      @media (hover: hover) {
+        border-color: rgba(var(--color-primary-700), 1);
+      }
+    }
+  }
+  &:is(.dark *) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: rgba(var(--color-primary-900), 1);
+      }
+    }
+  }
+  &:is(.dark *) {
+    &:hover {
+      @media (hover: hover) {
+        color: rgba(var(--color-primary-300), 1);
+      }
+    }
+  }
+  text-decoration: none !important;
+}
+.pt-8 .flex.justify-between a:hover {
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .grid-w10 {
   width: calc(10% - 5px);
